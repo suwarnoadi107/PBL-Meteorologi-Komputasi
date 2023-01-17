@@ -1,0 +1,979 @@
+---
+title: "PROBLEM BASED LEARNING - KORELASI ANTARA CURAH HUJAN DENGAN CPO DAN FLUKTUASI SAHAM: STUDI KASUS PADA PT ASTRA AGRO LESTARI TBK."
+author: "Kelompok 5"
+date: "2022-11-30"
+output: html_document
+---
+
+````{=html}
+<style>
+body {
+text-align: justify;
+font-family: times, Times New Roman;
+font-size: 5;
+}
+</style>
+```
+````
+
+<font size="5">
+
+<p align="center">
+
+***PROBLEM BASED LEARNING***
+
+</p>
+
+</font>
+
+<font size="5">
+
+<p align="center">
+
+**KORELASI ANTARA CURAH HUJAN DENGAN CPO DAN FLUKTUASI SAHAM:\
+STUDI KASUS PADA PT ASTRA AGRO LESTARI TBK.**
+
+</p>
+
+</font>
+
+<font size="4">
+
+<p align="center">
+
+(Mata Kuliah Meteorologi Komputasi)
+
+</p>
+
+</font>
+
+<br />
+
+<br />
+
+<font size="4">
+
+<p align="center">
+
+Dosen:\
+1. Dr. Muh. Taufik, S.Si, M.Si\
+Dr. I Putu Santikayasa, M.Si
+
+</p>
+
+</font>
+
+<br />
+
+<font size="4">
+
+<p align="center">
+
+Asisten:\
+1. Divina Umanita Illiyyan, S.Si\
+2. Mudrik Haikal (G24190054)
+
+</p>
+
+</font>
+
+<br />
+
+<font size="4">
+
+<p align="center">
+
+Adi Suwarno G2401211019\
+Restu Gendhis Selifani G2401211042\
+Abd. Malik A. Madinu G2401211050\
+Lintang Sekartadji G2401211059
+
+</p>
+
+</font>
+
+<br />
+
+![](images/pic%20Logo-IPB-University-Vertical.png){width="1160"}
+
+<br />
+
+<font size="5">
+
+<p align="center">
+
+**DEPARTEMEN GEOFISIKA DAN METEOROLOGI\
+FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM\
+IPB UNIVERSITY\
+2022**
+
+</p>
+
+</font>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Abstrak
+
+Kelapa sawit adalah salah satu komoditas perkebunan unggulan dan utama di Indonesia. Tanaman yang produk utamanya terdiri dari *Crude Palm Oil* (CPO) dan *Palm Kernel Oil* (PKO) ini memiliki nilai ekonomis tinggi dan menjadi salah satu penyumbang devisa negara yang terbesar dibandingkan dengan komoditas perkebunan lainnya. Salah satunya industri kelapa sawit yaitu PT Astra Agro Lestari Tbk. yang merupakan industri dalam mengembangkan  perkebunan sawit di Indonesia. Kelapa sawit memiliki arti penting bagi pembangunan nasional. Hal ini menjadikan sektor-sektor industri kelapa sawit yang ada di Indonesia terus berkembang dan berupaya meningkatkan jumlah produktivitas produksi sawit. Terdapat beberapa faktor utama yang mempengaruhi produktivitas tanaman kelapa sawit, yaitu curah hujan, iklim, bentuk wilayah, kondisi tanah, bahan tanam, dan teknik budidaya. Sehingga kondisi iklim sangat memegang peranan penting dalam produktivitas tanaman kelapa sawit karena mempengaruhi potensi produksi. Hujan berpengaruh  besar terhadap produksi kelapa sawit. Pertumbuhan kelapa sawit memerlukan curah hujan \>1250 mm/tahun dengan penyebaran hujan sepanjang tahun merata. Hal ini menjadi pemahaman terhadap pengaruh unsur cuaca dan umur tanaman terhadap pertumbuhan dan produksi tandan kelapa sawit sangat diperlukan sebagai dasar untuk memprediksi dan mengevaluasi produktivitas kelapa sawit. 
+
+***Kata Kunci*** : Kelapa Sawit, Curah Hujan, Saham, CPO
+
+## Pendahuluan
+
+Indonesia merupakan produsen kelapa sawit terbesar di dunia dan industrinya telah menjadi andalan dalam perekonomian karena kelapa sawit menjadi salah satu sumber penghasil devisa dari ekspor sektor pertanian. Pada tahun 2015, Indonesia menghasilkan lebih dari 31 juta ton kelapa sawit dalam bentuk minyak sawit (Crude Palm Oil, CPO) (Ditjen Perkebunan 2015). Perkebunan kelapa sawit berkontribusi besar terhadap pembangunan daerah sebagai sumber penting dalam pengentasan kemiskinan melalui usaha budidaya dan pengolahan hilirnya. Usaha kelapa sawit tersebut memberikan pendapatan yang dapat diandalkan bagi sebagian besar masyarakat di Indonesia, terutama di Sumatera, Kalimantan, dan Sulawesi. Sehingga kelapa sawit dapat diartikan sebagai komoditas perkebunan utama yang memiliki peran strategis dalam pembangunan ekonomi di Indonesia. Kelapa sawit merupakan tumbuhan monokotil yang tidak memiliki akar tunggang. Radikula (bakal akar) pada bibit kelapa sawit terus tumbuh memanjang ke arah bawah selama enam bulan terus-menerus dan panjang akarnya mencapai 15 meter.
+
+Curah hujan adalah jumlah air yang jatuh di permukaan tanah dasar selama periode tertentu yang diukur dengan satuan tinggi milimeter di atas permukaan horizontal. Dalam penjelasan lain curah hujan juga dapat diartikan sebagai ketinggian air hujan yang terkumpul dalam tempat yang datar, tidak menguap, tidak meresap, dan tidak mengalir. Indonesia merupakan negara yang memiliki angka curah hujan bervariasi dikarenakan daerahnya yang berada pada ketinggian yang berbeda-beda. Begitupun dengan kelapa sawit, curah hujan dibawah 1250 mm/tahun merupakan pembatas pertumbuhan bagi kelapa sawit, karena dapat terjadi defisit air, namun jika curah hujan melebihi 2500 mm/th akan mempengaruhi proses penyerbukan sehingga kemungkinan terjadi aborsi bunga jantan maupun bunga betina menjadi lebih tinggi. Ketinggian tempat yang baik untuk ditanam tanaman kelapa sawit yaitu antara 0--500 m dpl dengan kemiringan lereng sebesar 0--3%. 
+
+Hal ini menjadi salah satu faktor pada perusahaan PT Astra Agro Lestari Tbk yang bergerak di bidang sektor perkebunan sawit. PT Astra Agro Lestari Tbk (Perseroan) merupakan perusahaan yang terbentuk atas penggabungan (merger) dari beberapa perusahaan yang mengembangkan industri perkebunan di Indonesia sejak lebih dari 30 tahun yang lalu. Berawal dari perkebunan ubi kayu, kemudian mengembangkan tanaman karet, hingga pada tahun 1984, dimulailah budidaya tanaman kelapa sawit di Provinsi Riau dan di tahun 1988, Perseroan resmi menjadi industri yang bergerak dalam bidang perkebunan kelapa sawit serta terus berkembang menjadi salah satu perusahaan perkebunan kelapa sawit terbesar dengan memiliki manajemen yang baik. Sampai dengan tahun 2021, luas area yang dikelola Perseroan mencapai 286.727 hektar yang tersebar di pulau Sumatera, Kalimantan, dan Sulawesi. Perseroan ini terus berkembang sehingga mencoba untuk meningkatkan upaya digitalisasi guna meningkatkan efektivitas dan efisiensi proses perawatan dan pemeliharaan tanaman produktif dengan menggunakan anggaran dari belanja modal, salah satunya saham.
+
+Saham adalah salah satu bentuk simpanan berharga yang digunakan pada pasar perdagangan modal yang bersifat kepemilikan. Saham ini kemudian menjadi tanda penyertaan modal bagi badan usaha dalam suatu perusahaan atau perseroan terbatas. Dalam sektor perdagangan saham PT Astra Agro Lestari Tbk, harga-harga saham selalu mengalami fluktuasi baik berupa kenaikan maupun penurunan. Pembentukan harga saham ini terjadi karena adanya permintaan dan penawaran atas saham tersebut. Permintaan serta penawaran tersebut terjadi karena adanya banyak faktor. 
+
+Yulis (2015) mengatakan bahwa pada sektor industri, terbukti bahwa cuaca, yaitu curah hujan, berpengaruh negatif terhadap *return* saham yang artinya setiap kenaikan cuaca (semakin menuju ke arah cerah), maka *return* saham akan mengalami penurunan, hal ini disebabkan pada saat cuaca panas, secara psikologis manusia cenderung mengalami kelelahan fisik dan kelesuan/kurang agresif dalam pengambilan risiko investasi. Adapun *return* saham ialah tingkat keuntungan yang diterima oleh pemodal atas investasi yang telah dilakukannya. Secara ringkas, informasi terkait latar belakang ini dapat dilihat berdasarkan pada peta diagram yang dihasilkan.
+
+![](https://lh5.googleusercontent.com/2JtGOCBhWDQ4BaId40CGrtSG5-P7P0sNW6C5B-8Nt91UN3p0kHkubl_gHGbOhdY84hDcxyls6LBgZAY6YhletsCXORE4EiFl3B_mvAUa6rujqds2vzLv9ru2WUFtBxwJHsFNiODWbh2bICygR0LJeoTT-58M6MdLoDgy8PprBOERRSpCe1kE12L4v0VRTA)
+
+## Tujuan
+
+1.  Mengetahui korelasi antara curah hujan dengan CPO PT Astra Agro Lestari Tbk secara bulanan dalam periode 2020 - 2021.
+
+2.  Mengetahui korelasi antara curah hujan dengan CPO PT Astra Agro Lestari Tbk secara tahunan dalam periode 2007 - 2021.
+
+3.  Mengetahui korelasi curah hujan dengan fluktuasi saham PT Astra Agro Lestari Tbk secara harian dalam periode 2020 - 2021.
+
+4.  Mengetahui korelasi curah hujan dengan fluktuasi saham PT Astra Agro Lestari Tbk  secara tahunan dalam periode 2007 - 2021.
+
+## Metodologi Penelitian
+
+Data diambil dari lokasi perkebunan sawit milik PT Astra Agro Lestari Tbk. yang berada di Provinsi Jambi, Riau, Kalimantan Selatan, Kalimantan Tengah, Kalimantan Timur, Sulawesi Barat, Sulawesi Tengah, dan Aceh yang dapat diakses pada laporan bulanan dan tahunan dari situs perusahaan. Pengumpulan data saham dilakukan menggunakan data primer yang berasal dari situs *investing.com*. Pada saat yang sama juga dilakukan pengambilan data berkaitan dengan curah hujan bersumber dari OGIMET yang kemudian akan diolah menjadi jumlah curah hujan harian, bulanan, dan tahunan. Data pengamatan yang digunakan yaitu dari rentang waktu 2020 s.d. 2021 (skala harian dan bulanan) dan dari rentang waktu 2007 s.d. 2021 (skala tahunan) untuk menunjukkan hubungan antara curah hujan dengan CPO produksi dan curah hujan dengan saham AALI. Dalam proses *cleaning* dan pengolahan data, digunakan beberapa *package,* antara lain *climate, readxl, openxlsx, sp, raster, dismo deldir, reshape2, zoo, dplyr, ggplot2,* dan *hrbrthemes.*
+
+### **Metode Pengolahan Data**
+
+1.  Metode poligon adalah salah satu cara mengetahui posisi horizontal banyak titik. Tujuan pengukuran poligon untuk menentukan pengukuran koordinat titik-titik ikat (kontrol) (Kusumawati 2014). Poligon adalah rangkaian garis berurutan yang panjang dan arahnya telah ditentukan dari pengukuran lapangan. Alasan menggunakan metode ini karena dapat dilihat dengan beberapa hal, seperti menghubungkan  tiap stasiun yang ada dengan menarik garis-garis putus, tiap garis tidak saling berpotongan; membuat garis berat pada garis yang telah dibuat sebelumnya; menghubungkan antar garis berat sehingga membentuk pola poligon; wilayah poligon memiliki satu stasiun di dalamnya, stasiun tersebut mewakili wilayah dalam poligon; dan menghitung nilai curah hujan dengan menggunakan persamaan rumus. Poligon thiessen menjadi salah satu metode perhitungan hujan wilayah dengan basis interpolasi nilai curah hujan antara satu stasiun dengan  stasiun lainnya. Selain memperhatikan curah hujan dan jumlah stasiun, juga memperkirakan luas wilayah yang diwakili oleh masing-masing stasiun untuk digunakan sebagai salah satu faktor dalam menghitung hujan rata-rata daerah yang bersangkutan (Dwi 2019). Poligon dibuat dengan cara menghubungkan garis-garis berat diagonal terpendek dari para stasiun hujan yang ada. Adapun metode ini akan digunakan untuk pengukuran curah hujan wilayah di setiap provinsi yang terdapat perkebunan sawit milik PT Astra Agro Lestari Tbk.
+
+    Rumus Polygon Thiessen:
+
+    ![](images/pic%20pts%20rumus.png){width="296"}
+
+2.  Metode aritmatika merupakan metode yang paling sederhana dalam melakukan perhitungan rata-rata curah hujan wilayah. Perhitungan yang digunakan yaitu  dengan cara, pengukuran yang dilakukan di beberapa stasiun dalam waktu yang bersamaan dijumlahkan kemudian dibagi dengan jumlah stasiun (Lashari 2017). Hasil perhitungan yang diperoleh dengan cara aritmatik ini hampir sama dengan cara lain apabila jumlah stasiun pengamatan cukup banyak dan tersebar merata di seluruh wilayah. Keuntungan perhitungan metode dengan cara ini adalah lebih objektif. Metode ini digunakan untuk mengukur curah hujan wilayah perkebunan sawit miliki PT Astra Agro Lestari Tbk per pulau, berdasarkan informasi curah hujan wilayah provinsi yang telah dihitung dengan metode poligon thiessen.
+
+    Rumus Metode Aritmatika:
+
+    ![](images/pict%20arit%20rumus.png){width="183"}
+
+#### **Pengunduhan Data Curah Hujan Melalui OGIMET**
+
+Pertama, akan dilakukan pengunduhan data melalui OGIMET. Pada langkah ini, akan diaktifkan *package climate* dan dibuat *string* berisi data stasiun se-Indonesia dan penyebarannya, serta ditentukan juga tanggalnya. Namun, perlu diperhatikan juga untuk data dua tahun periode 2020 dan 2021, cukup atur *string tgl.awal* pada tanggal 1 Januari 2020.
+
+```{r}
+library(climate)
+st_indonesia <-  stations_ogimet(country = "Indonesia", add_map = T)
+# Atur Tanggal Periode 15 Tahun
+tgl.awal <- as.Date("2007-01-01")  
+tgl.akhir <- as.Date("2021-12-31")
+```
+
+Selanjutnya, akan dipilih beberapa stasiun dari delapan provinsi (Jambi, Aceh, Riau, Kalimantan Timur, Kalimantan Tengah, Kalimantan Selatan, Sulawesi Barat, dan Sulawesi Tengah) yang akan digunakan untuk mengukur curah hujan wilayah, beserta WMO ID-nya.
+
+```{r}
+#WMO ID
+WMO.riau <- c(96171, 96109, 96091, 96087)
+WMO.aceh <- c(96001, 96011, 96009, 96015, 96033)
+WMO.jambi <- c(96195, 96221, 96207)
+WMO.kalteng <- c(96655, 96615 ,96645)
+WMO.kalsel <- c(96685, 96695, 96633, 96655, 96595, 96607)
+WMO.kaltim <- c(96529, 96607, 96595, 96633, 96655)
+WMO.sulbar <- c(97120, 97126, 97096, 97072, 97086)
+WMO.sulteng <- c(97028, 97048, 97096, 97072, 97086)
+
+wmo.total <- list(WMO.jambi,WMO.riau,WMO.aceh,WMO.kaltim,
+               WMO.kalsel,WMO.kalteng,WMO.sulbar,WMO.sulteng)
+
+#Nama Stasiun
+## Telah diurut berdasarkan WMO ID di atas
+sta_riau <- c('Rengat', "Pakanbaru", 'Tj.Pinang','Batan')
+sta_aceh <- c('Sabang', "Banda.Aceh", 'Lhoukseumaweh','Meulaboh','Belawan')
+sta_jambi <- c('Sultantaha', 'Palembang', 'Kerinci')
+sta_kalteng <- c('Palangkaraya', 'Ketapang', 'Pangkalan')
+sta_kalsel <- c('Banjarmasin', 'Kota Baru', 'Balikpapan', 'Palangkaraya', 'Muaratewe', 'Samarinda')
+sta_kaltim <- c('Berau', "Samarinda", 'Muaratewe','Balikpapan','Palangkaraya')
+sta_sulbar <- c('Majene', "Masamba", 'Poso','Palu','Luwuk')
+sta_sulteng <- c('Lalos', "Gorontalo", 'Poso','Palu','Luwuk')
+
+sta_semua <- list(sta_jambi,sta_riau,sta_aceh,sta_kaltim,sta_kalsel,sta_kalteng,sta_sulbar,sta_sulteng)
+```
+
+Setelah itu, pengunduhan data telah bisa dilakukan dan agar data tidak perlu diunduh berulang kali, turut akan dilakukan penyimpanan data dalam format **.xlsx** dan disimpan dalam suatu folder. Saat mengunduh data dua tahun, digunakan folder penyimpanan yang berbeda untuk memudahkan proses *running* di tahap-tahap berikutnya. Karena data telah diunduh, *script* pengunduhan data akan ditampilkan saja pada bagian berikut.
+
+> <p><font size="2" face="Lucida Console">library(openxlsx)\
+> lok.sta \<- c("Jambi","Riau","Aceh","Kaltim","Kalsel","Kalteng","Sulbar","Sulteng")\
+> for (i in 1:length(wmo.total)) {\
+> wmo.smtr \<- wmo.total[[i]]\
+> nama.sta \<- sta_semua[[i]]\
+> lokasi \<- lok.sta[i]\
+> sta_8prov \<- list()\
+> for (k in 1:length(wmo.smtr)) {\
+> dt \<- ogimet_daily(c(tgl.awal,tgl.akhir), station = wmo.smtr[k])\
+> dt \<- dt[!duplicated(dt[c('Date')]),]\
+> sta_8prov[[k]] \<- dt\
+> names(sta_8prov)[[k]] \<- nama.sta[k]\
+> }\
+> write.xlsx(sta_8prov, file = paste0('Data Mentah 15 Tahun 2007 - 2021/',i,'. Data Meteorologi',lokasi,'.xlsx'))\
+> }</font></p>
+
+#### **Pengunggahan Data OGIMET yang Telah Disimpan dalam Excel**
+
+Pada bagian ini, akan dilakukan pengunggahan data yang telah disimpan dalam file excel. Adapun *script* hanya akan menunjukkan pengolahan untuk data 15 tahun.
+
+```{r}
+library(readxl)
+isi.folder <- dir(path='Data Mentah 15 Tahun 2007 - 2021/',pattern='.xlsx',full.names=TRUE)
+lok.sta <- c("Jambi","Riau","Aceh","Kaltim","Kalsel","Kalteng","Sulbar","Sulteng")
+sta_tiap_prov <- list()
+for (i in 1:length(isi.folder)) {
+  isi.sheet <- excel_sheets(isi.folder[i])
+  file <- isi.folder[i]
+  namain.sta <- sta_semua[[i]]
+  location <- lok.sta[i]
+  sta_tiap_prov <- list()
+  for (b in 1:length(isi.sheet)) {
+    sta_tiap_prov[[b]] <- read_excel(file, sheet = b)
+    names(sta_tiap_prov)[[b]] <- namain.sta[b]
+  }
+  if (i==1){ jambi.dt <- sta_tiap_prov
+  } else if (i==2){ riau.dt <- sta_tiap_prov
+  } else if (i==3){ aceh.dt <- sta_tiap_prov
+  } else if (i==4){ kaltim.dt <- sta_tiap_prov
+  } else if (i==5){ kalsel.dt <- sta_tiap_prov
+  } else if (i==6){ kalteng.dt <- sta_tiap_prov
+  } else if (i==7){ sulbar.dt <- sta_tiap_prov
+  } else sulteng.dt <- sta_tiap_prov
+}
+
+datamet.sta.8prov <- list(jambi.dt,riau.dt,aceh.dt,kaltim.dt,kalsel.dt,kalteng.dt,sulbar.dt,sulteng.dt)
+```
+
+Selanjutnya, data NA pada kolom curah hujan akan diubah menjadi nol
+
+```{r}
+summary(datamet.sta.8prov[[1]][[3]][11])
+#Mengubah Data CH bernilai NA menjadi 0
+for (i in 1:length(datamet.sta.8prov)) {
+  for (k in 1:length(datamet.sta.8prov[[i]])) {
+    datamet.sta.8prov[[i]][[k]][11][is.na(datamet.sta.8prov[[i]][[k]][11])] <- 0
+  }
+}
+
+summary(datamet.sta.8prov[[1]][[3]][11])
+```
+
+#### **Pengolahan Data Curah Hujan**
+
+Selanjutnya, akan dibuat *string* tanggal dengan nama **date** dan mengubah tipe data **wmo_id** menjadi numerik.
+
+```{r}
+date <- jambi.dt$Sultantaha$Date
+st_indonesia$wmo_id <- as.numeric(st_indonesia$wmo_id)
+```
+
+Selanjutnya, akan dibuat *string* data khusus berisi informasi stasiun yang akan digunakan untuk pengukuran CH Wilayah dari setiap wilayah, serta akan dilakukan diubah tipe datanya dari *data frame* menjadi *spatial data frame* dan ditambahkan proyeksinya.
+
+```{r}
+library(dplyr)
+library(sp)
+library(raster)
+wmo.total <- list(WMO.jambi,WMO.riau,WMO.aceh,WMO.kaltim,
+                  WMO.kalsel,WMO.kalteng,WMO.sulbar,WMO.sulteng)
+for (i in 1:length(wmo.total)) {
+  wmo <- data.frame(wmo_id = wmo.total[[i]])
+  tsta_8prov <- left_join(wmo, st_indonesia, by='wmo_id')
+  if (i==1){ jambi.tsta <- tsta_8prov
+  } else if (i==2){ riau.tsta <- tsta_8prov
+  } else if (i==3){ aceh.tsta <- tsta_8prov
+  } else if (i==4){ kaltim.tsta <- tsta_8prov
+  } else if (i==5){ kalsel.tsta <- tsta_8prov
+  } else if (i==6){ kalteng.tsta <- tsta_8prov
+  } else if (i==7){ sulbar.tsta <- tsta_8prov
+  } else sulteng.tsta <- tsta_8prov
+}
+tsta.8prov <- list(jambi.tsta,riau.tsta,aceh.tsta,kaltim.tsta,kalsel.tsta,kalteng.tsta,sulbar.tsta,sulteng.tsta)
+
+for (i in 1:length(tsta.8prov)) {
+  #ubah data frame menjadi spatial data frame ()
+  coordinates(tsta.8prov[[i]]) <- ~lon+lat
+  #menambahkan CRS
+  crs(tsta.8prov[[i]]) <- "+proj=longlat"
+}
+```
+
+Kemudian, akan dilakukan peng-*input*-an data SHP batas provinsi dan *subset* provinsi yang diinginkan.
+
+```{r}
+#Buka vektor pembatas provinsi
+prov <- shapefile("BATAS PROVINSI DESEMBER 2019 DUKCAPIL/BATAS_PROVINSI_DESEMBER_2019_DUKCAPIL.shp")
+
+#Subset Provinsi Target dan sekitarnya
+jambi.area <- subset(prov, prov@data$PROVINSI %in% c('JAMBI', 'SUMATERA SELATAN'))
+riau.area <- subset(prov, prov@data$PROVINSI %in% c('SUMATERA SELATAN','RIAU','BENGKULU'))
+aceh.area <- subset(prov, prov@data$PROVINSI %in% c('ACEH','SUMATERA UTARA'))
+kaltim.area <- subset(prov, prov@data$PROVINSI %in% c('KALIMANTAN TIMUR','KALIMANTAN UTARA','KALIMANTAN TENGAH'))
+kalsel.area <- subset(prov, prov@data$PROVINSI %in% c('KALIMANTAN SELATAN, KALIMANTAN TENGAH, KALIMANTAN TIMUR'))
+kalteng.area <- subset(prov, prov@data$PROVINSI %in% c('KALIMANTAN TENGAH', 'KALIMANTAN SELATAN'))
+sulbar.area <- subset(prov, prov@data$PROVINSI %in% c('SULAWESI BARAT', 'SULAWESI TENGAH', 'SULAWESI SELATAN'))
+sulteng.area <- subset(prov, prov@data$PROVINSI %in% c('SULAWESI BARAT', 'SULAWESI TENGAH', 'SULAWESI TENGGARA', 'GORONTALO'))
+
+area.8prov <- list(jambi.area,riau.area,aceh.area,kaltim.area,kalsel.area,kalteng.area,sulbar.area,sulteng.area)
+
+#Subset Provinsi Target untuk di-Crop Polygen Thiessen
+jambi.crpts <- subset(prov, prov@data$PROVINSI %in% 'JAMBI')
+riau.crpts <- subset(prov, prov@data$PROVINSI %in% 'RIAU')
+aceh.crpts <- subset(prov, prov@data$PROVINSI %in% 'ACEH')
+kaltim.crpts <- subset(prov, prov@data$PROVINSI %in% 'KALIMANTAN TIMUR')
+kalsel.crpts <- subset(prov, prov@data$PROVINSI %in% 'KALIMANTAN SELATAN')
+kalteng.crpts <- subset(prov, prov@data$PROVINSI %in% 'KALIMANTAN TENGAH')
+sulbar.crpts <- subset(prov, prov@data$PROVINSI %in% 'SULAWESI BARAT')
+sulteng.crpts <- subset(prov, prov@data$PROVINSI %in% 'SULAWESI TENGAH')
+
+crpts.8prov <- list(jambi.crpts,riau.crpts,aceh.crpts,kaltim.crpts,kalsel.crpts,kalteng.crpts,sulbar.crpts,sulteng.crpts)
+```
+
+Setelah ini, dapat dilakukan pembuatan poligon thiessen dan perhitungan proporsi cakupan area dari setiap stasiun terhadap besarnya curah hujan pada suatu provinsi.
+
+```{r}
+#buat polygon theissen
+library(dismo)
+library(deldir)
+for (i in 1:length(area.8prov)) {
+  p.tsn <- voronoi(tsta.8prov[[i]])
+  p.tsn2 <- voronoi(tsta.8prov[[i]], ext = extent(area.8prov[[i]]))
+  tsn.wilayah <- crop(p.tsn2,crpts.8prov[[i]])
+  if (i==1){ jambi.tsn <- tsn.wilayah
+  } else if (i==2){ riau.tsn <- tsn.wilayah
+  } else if (i==3){ aceh.tsn <- tsn.wilayah
+  } else if (i==4){ kaltim.tsn <- tsn.wilayah
+  } else if (i==5){ kalsel.tsn <- tsn.wilayah
+  } else if (i==6){ kalteng.tsn <- tsn.wilayah
+  } else if (i==7){ sulbar.tsn <- tsn.wilayah
+  } else sulteng.tsn <- tsn.wilayah
+}
+tsn.8prov <- list(jambi.tsn,riau.tsn,aceh.tsn,kaltim.tsn,kalsel.tsn,kalteng.tsn,sulbar.tsn,sulteng.tsn)
+
+tsn.8prov
+
+#Menghitung proporsi area
+for (i in 1:length(tsn.8prov)) {
+  tsn.8prov[[i]]@data$area <- area(tsn.8prov[[i]])
+  tsn.8prov[[i]]@data$area <- tsn.8prov[[i]]@data$area/1000000 #ubah ke km2
+  total_area <- sum(tsn.8prov[[i]]@data$area)
+  tsn.8prov[[i]]@data$prop_area <- tsn.8prov[[i]]@data$area/total_area 
+}
+```
+
+Pada bagian terakhir, akan dilakukan perhitungan nilai curah hujan setiap provinsi dengan metode poligon thiessen.
+
+```{r}
+################# HITUNG POLIGON THIESSEN ################# 
+#hitung proporsi wilayah polygon yang termasuk pada batas administrasi setiap provinsi
+### 1. JAMBI
+ch.sul <- datamet.sta.8prov[[1]]$Sultantaha$Precmm
+ch.pal <- datamet.sta.8prov[[1]]$Palembang$Precmm
+ch.ker <- datamet.sta.8prov[[1]]$Kerinci$Precmm
+
+jambi.ratsn <- ch.sul*tsn.8prov[[1]]@data$prop_area[1]+ch.pal*tsn.8prov[[1]]@data$prop_area[2]+ch.ker*tsn.8prov[[1]]@data$prop_area[3]
+
+### 2. RIAU
+ch.ren <- datamet.sta.8prov[[2]]$Rengat$Precmm
+ch.pkbr <- datamet.sta.8prov[[2]]$Pakanbaru$Precmm
+ch.tj.pinang <- datamet.sta.8prov[[2]]$Tj.Pinang$Precmm
+ch.batan <- datamet.sta.8prov[[2]]$Batan$Precmm
+
+riau.ratsn <- ch.ren*tsn.8prov[[2]]@data$prop_area[1] + ch.pkbr*tsn.8prov[[2]]@data$prop_area[2]+
+  ch.tj.pinang*tsn.8prov[[2]]@data$prop_area[3] + ch.batan*tsn.8prov[[2]]@data$prop_area[4] 
+
+### 3. ACEH
+ch.sbg <- datamet.sta.8prov[[3]]$Sabang$Precmm
+ch.banda <- datamet.sta.8prov[[3]]$Banda.Aceh$Precmm
+ch.lhouk <- datamet.sta.8prov[[3]]$Lhoukseumaweh$Precmm
+ch.meu <- datamet.sta.8prov[[3]]$Meulaboh$Precmm
+ch.bel <- datamet.sta.8prov[[3]]$Belawan$Precmm
+
+aceh.ratsn <- ch.sbg*tsn.8prov[[3]]@data$prop_area[1] + ch.banda*tsn.8prov[[3]]@data$prop_area[2]+
+  ch.lhouk*tsn.8prov[[3]]@data$prop_area[3] + ch.meu*tsn.8prov[[3]]@data$prop_area[4] +
+  ch.bel*tsn.8prov[[3]]@data$prop_area[5]
+
+### 4. Kaltim
+ch.berau <- datamet.sta.8prov[[4]]$Berau$Precmm
+ch.smrd <- datamet.sta.8prov[[4]]$Samarinda$Precmm
+ch.muara <- datamet.sta.8prov[[4]]$Muaratewe$Precmm
+ch.bl.ppn <- datamet.sta.8prov[[4]]$Balikpapan$Precmm
+ch.plkrya <- datamet.sta.8prov[[4]]$Palangkaraya$Precmm
+
+kaltim.ratsn <- ch.berau*tsn.8prov[[4]]@data$prop_area[1] + ch.smrd*tsn.8prov[[4]]@data$prop_area[2]+
+  ch.muara*tsn.8prov[[4]]@data$prop_area[3] + ch.bl.ppn*tsn.8prov[[4]]@data$prop_area[4] +
+  ch.plkrya*tsn.8prov[[4]]@data$prop_area[5]
+
+### 5. Kalsel
+ch.bjm <- datamet.sta.8prov[[5]]$Banjarmasin$Precmm
+ch.kotabr <- datamet.sta.8prov[[5]]$`Kota Baru`$Precmm
+ch.balik.p <- datamet.sta.8prov[[5]]$Balikpapan$Precmm
+ch.plangkr <- datamet.sta.8prov[[5]]$Palangkaraya$Precmm
+ch.mrtw <- datamet.sta.8prov[[5]]$Muaratewe$Precmm
+
+kalsel.ratsn <- ch.bjm*tsn.8prov[[5]]@data$prop_area[1] + ch.kotabr*tsn.8prov[[5]]@data$prop_area[2]+
+  ch.balik.p*tsn.8prov[[5]]@data$prop_area[3] + ch.plangkr*tsn.8prov[[5]]@data$prop_area[4] +
+  ch.mrtw*tsn.8prov[[5]]@data$prop_area[5] 
+
+### 6. Kalteng
+ch.paraya <- datamet.sta.8prov[[6]]$Palangkaraya$Precmm
+ch.pkl <- datamet.sta.8prov[[6]]$Pangkalan$Precmm
+
+kalteng.ratsn <- ch.paraya*tsn.8prov[[6]]@data$prop_area[1] + 
+  ch.pkl*tsn.8prov[[6]]@data$prop_area[2] 
+
+### 7. Sulbar
+ch.mjn <- datamet.sta.8prov[[7]]$Majene$Precmm
+ch.msb <- datamet.sta.8prov[[7]]$Masamba$Precmm
+ch.ps <- datamet.sta.8prov[[7]]$Poso$Precmm
+ch.pl <- datamet.sta.8prov[[7]]$Palu$Precmm
+
+sulbar.ratsn <- ch.mjn*tsn.8prov[[7]]@data$prop_area[1] + ch.msb*tsn.8prov[[7]]@data$prop_area[2]+
+  ch.ps*tsn.8prov[[7]]@data$prop_area[3] + ch.pl*tsn.8prov[[7]]@data$prop_area[4] 
+
+### 8. Sulteng
+ch.lalos <- datamet.sta.8prov[[8]]$Lalos$Precmm
+ch.grtl <- datamet.sta.8prov[[8]]$Gorontalo$Precmm
+ch.poso <- datamet.sta.8prov[[8]]$Poso$Precmm
+ch.palu <- datamet.sta.8prov[[8]]$Palu$Precmm
+ch.luwuk <- datamet.sta.8prov[[8]]$Luwuk$Precmm
+
+sulteng.ratsn <- ch.lalos*tsn.8prov[[8]]@data$prop_area[1] + ch.grtl*tsn.8prov[[8]]@data$prop_area[2]+
+  ch.poso*tsn.8prov[[8]]@data$prop_area[3] + ch.palu*tsn.8prov[[8]]@data$prop_area[4] +
+  ch.luwuk*tsn.8prov[[8]]@data$prop_area[5]
+
+chtsn.8prov <- list(jambi.ratsn,riau.ratsn,aceh.ratsn,kaltim.ratsn,kalsel.ratsn,kalteng.ratsn,sulbar.ratsn,sulteng.ratsn)
+```
+
+#### **Penyimpanan Hasil Pengolahan Data Curah Hujan Dengan Metode Poligon Thiessen**
+
+Untuk data curah hujan dua tahun periode 2020-2021, hanya akan disimpan dalam curah hujan harian dan bulanan. Sementara itu, data curah hujan 15 tahun periode 2007-2021 akan disimpan dalam curah hujan harian yang akan digunakan untuk menghitung curah hujan tahunannya. *Script* berikut akan menunjukkan pengolahan data untuk data periode 2007-2021.
+
+##### Curah Hujan Harian
+
+```{r}
+library(openxlsx)
+for (i in 1:length(chtsn.8prov)) {
+  ra <- data.frame(date,chtsn.8prov[[i]])
+  ra$date <- as.Date(ra$date)
+  write.xlsx(ra, file = paste0('CH Harian 15 Tahun/',i,'. CH ',lok.sta[i],' Harian 15 tahun.xlsx'))
+}
+```
+
+##### Curah Hujan Bulanan
+
+Pada data ini, akan dimunculkan juga kolom tahunnya.
+
+```{r}
+#buat kolom bulan tahun
+library(readxl)
+library(zoo)
+isi.folder2 <- dir(path='CH Harian 15 Tahun/',pattern='.xlsx',full.names=TRUE)
+
+for (i in 1:length(isi.folder2)) {
+  ra <- read_excel(isi.folder2[i])
+  ra$date <- as.Date(ra$date)
+  ra$bulan <- as.character(format(ra$date, "%b"))
+  ra$yr <- as.character(format(ra$date, "%Y"))
+  #buat kolom CH bulanan
+  kolom <- paste0('CH.',lok.sta[i])
+  ra2 <- ra %>% group_by(bulan, yr) %>% summarise(kolom = sum(chtsn.8prov..i.., na.rm=T))
+  colnames(ra2) <- c('bulan','yr',kolom)
+  write.xlsx(ra2, file = paste0('CH Bulanan 15 Tahun/',i,'. CH ',lok.sta[i],' bln 15 tahun.xlsx'))
+}
+```
+
+##### Curah Hujan Tahunan
+
+```{r}
+isi.folder3 <- dir(path='CH Harian 15 Tahun/',pattern='.xlsx',full.names=TRUE)
+for (i in 1:length(isi.folder3)) {
+  ra <- read_excel(isi.folder3[i])
+  ra$date <- as.Date(ra$date)
+  ra$yr <- as.numeric(format(ra$date, "%Y"))
+  #buat kolom CH bulanan
+  kolom <- paste0('CH.',lok.sta[i])
+  ra2 <- ra %>% group_by(yr) %>% summarise(kolom = mean(chtsn.8prov..i.., na.rm=T))
+  colnames(ra2) <- c('yr',kolom)
+  write.xlsx(ra2, file = paste0('CH Tahunan 15 Tahun/',i,'. CH ',lok.sta[i],' 15 tahun.xlsx'))
+}
+```
+
+#### **Pengolahan Data Curah Hujan dan Astra Agro Lestari Tbk.**
+
+##### Pengunggahan dan Pengolahan Data Curah Hujan Harian dan Fluktuasi Saham AALI Harian Periode 2020-2021
+
+```{r}
+library(readxl)
+#Unggah data saham AALI
+shm.AALI <- read_excel('Data Historis AALI 2020 - 2021.xlsx')
+shm.AALI <- shm.AALI[c(1,2,3,5,6)]
+
+#Unggah data curah hujan harian
+folder.ch.hr <- dir(path='CH Harian/',pattern='.xlsx',full.names=TRUE)
+lok.sta <- c("Jambi","Riau","Aceh","Kaltim","Kalsel","Kalteng","Sulbar","Sulteng")
+sta_tiap_prov <- list()
+for (i in 1:length(folder.ch.hr)) {
+  isi.sheet <- excel_sheets(folder.ch.hr[i])
+  file <- folder.ch.hr[i]
+  namain.sta <- sta_semua[[i]]
+  location <- lok.sta[i]
+  sta_tiap_prov <- list()
+  for (b in 1:length(isi.sheet)) {
+    sta_tiap_prov[[b]] <- read_excel(file, sheet = b)
+    names(sta_tiap_prov)[[b]] <- namain.sta[b]
+  }
+  if (i==1){ jambi.ch.harian <- sta_tiap_prov
+  } else if (i==2){ riau.ch.harian <- sta_tiap_prov
+  } else if (i==3){ aceh.ch.harian <- sta_tiap_prov
+  } else if (i==4){ kaltim.ch.harian <- sta_tiap_prov
+  } else if (i==5){ kalsel.ch.harian <- sta_tiap_prov
+  } else if (i==6){ kalteng.ch.harian <- sta_tiap_prov
+  } else if (i==7){ sulbar.ch.harian <- sta_tiap_prov
+  } else sulteng.ch.harian <- sta_tiap_prov
+}
+
+#Atur format tanggal
+shm.AALI$Tanggal <- as.Date(shm.AALI$Tanggal, format = "%d/%m/%Y")
+#Hitung CH harian wilayah dari 8 provinsi dengan metode aritmatika
+ch.harian.rata2 <- (jambi.ch.harian$Sultantaha$rain_tsn_me_jambi2+riau.ch.harian$Rengat$rain_tsn_Riau+
+                      kaltim.ch.harian$Berau$rain_tsn_KalTim2+
+                      kalteng.ch.harian$Palangkaraya$rain_tsn_me_kalteng2+kalsel.ch.harian$Banjarmasin$rain_tsn_me_kalsel2+
+                      aceh.ch.harian$Sabang$rain_tsn_NAD_Aceh2+
+                      sulbar.ch.harian$Majene$rain_tsn_NAD_sulawesi_island+sulteng.ch.harian$Lalos$rain_tsn_NAD_sulawesi_island)/8
+#Buat data frame tanggal dan CH harian
+ch.harian <- data.frame(Tanggal=jambi.ch.harian$Sultantaha$date, `CH Harian`=ch.harian.rata2)
+#Menggabungkan data curah hujan dan fluktuasi saham
+ch.fluks.data <- left_join(ch.harian, shm.AALI, by='Tanggal')
+#aproksimasi nilai NA pada data awal (pacu data tahun 2019)
+ch.fluks.data[1,3] <- 14208 #30 Des 2019 = 14575
+ch.fluks.data[1,4] <- 14525 #30 Des 2019 = 14500
+ch.fluks.data[1,5] <- 14658 #30 Des 2019 = 14675
+ch.fluks.data[1,6] <- 14115 #30 Des 2019 = 14300
+
+#aproksimasi nilai NA pada data akhir (pacu data tahun 2022)
+ch.fluks.data[731,3] <- 9525 #3 Jan 2022 = 9575
+ch.fluks.data[731,4] <- 9550 #3 Jan 2022 = 9500
+ch.fluks.data[731,5] <- 9633 #3 Jan 2022 = 9700
+ch.fluks.data[731,6] <- 9500 #3 Jan 2022 = 9500
+
+#aproksimasi Data NA
+library(zoo)
+ch.fluks.data <- ch.fluks.data%>% group_by(Tanggal) %>% mutate(Terakhir=na.approx(Terakhir, na.rm=F))%>%
+  ungroup()%>% mutate(Terakhir=na.approx(Terakhir,na.rm=F))
+ch.fluks.data <- ch.fluks.data%>% group_by(Tanggal) %>% mutate(Pembukaan=na.approx(Pembukaan, na.rm=F))%>%
+  ungroup()%>% mutate(Pembukaan=na.approx(Pembukaan,na.rm=F))
+ch.fluks.data <- ch.fluks.data%>% group_by(Tanggal) %>% mutate(Tertinggi=na.approx(Tertinggi, na.rm=F))%>%
+  ungroup()%>% mutate(Tertinggi=na.approx(Tertinggi,na.rm=F))
+ch.fluks.data <- ch.fluks.data%>% group_by(Tanggal) %>% mutate(Terendah=na.approx(Terendah, na.rm=F))%>%
+  ungroup()%>% mutate(Terendah=na.approx(Terendah,na.rm=F))
+
+#Lihat data
+ch.fluks.data
+```
+
+##### Pengunggahan dan Pengolahan Data Curah Hujan Harian dan CPO Astra Agro Lestari Tbk. Bulanan Periode 2020-2021
+
+```{r}
+#UPLOAD DATA CPO BULANAN
+library(readxl)
+sheet.name <- c('tbs.proses.n.cpo','totaltbs','sulawesi','kalimantan','sumatera')
+produksitbsncpo <- list()
+for (i in 1:length(sheet.name)) {
+  produksitbsncpo[[i]] <- read_xlsx('Produksi CPO AALI Bulanan.xlsx', sheet = i)
+  names(produksitbsncpo)[[i]] <- sheet.name[i]
+  produksitbsncpo[[i]]$bulan.tahun <- paste(produksitbsncpo[[i]]$Bulan,produksitbsncpo[[i]]$Tahun,sep = ' ') 
+  produksitbsncpo[[i]]$bulan.tahun <- factor(produksitbsncpo[[i]]$bulan.tahun,
+                                      levels = c('Jan 2020', 'Feb 2020', 'Mar 2020', 'Apr 2020', 'Mei 2020', 'Jun 2020',
+                                                 'Jul 2020', 'Agu 2020', 'Sep 2020', 'Okt 2020', 'Nov 2020', 'Des 2020',
+                                                 'Jan 2021', 'Feb 2021', 'Mar 2021', 'Apr 2021', 'Mei 2021', 'Jun 2021',
+                                                 'Jul 2021', 'Agu 2021', 'Sep 2021', 'Okt 2021', 'Nov 2021', 'Des 2021'))
+  produksitbsncpo[[i]] <- produksitbsncpo[[i]][-c(1,2)]
+}
+
+#PENGUNGGAHAN DATA EXCEL CH BULANAN 
+library(readxl)
+folder.ch.bln <- dir(path='CH Bulanan/',pattern='.xlsx',full.names=TRUE)
+lok.sta <- c("Jambi","Riau","Aceh","Kaltim","Kalsel","Kalteng","Sulbar","Sulteng")
+sta_tiap_prov <- list()
+for (i in 1:length(folder.ch.bln)) {
+  isi.sheet <- excel_sheets(folder.ch.bln[i])
+  file <- folder.ch.bln[i]
+  location <- lok.sta[i]
+  for (b in 1:length(isi.sheet)) {
+    sta_tiap_prov <- read_excel(file)
+    names(sta_tiap_prov) <- c('bulan','yr','CH')
+    sta_tiap_prov$bulan.tahun <- paste(sta_tiap_prov$bulan,sta_tiap_prov$yr,sep = ' ') 
+    sta_tiap_prov$bulan.tahun <- factor(sta_tiap_prov$bulan.tahun,
+                                        levels = c('Jan 2020', 'Feb 2020', 'Mar 2020', 'Apr 2020', 'May 2020', 'Jun 2020', 'Jul 2020', 'Aug 2020', 'Sep 2020', 'Oct 2020', 'Nov 2020', 'Dec 2020', 'Jan 2021', 'Feb 2021', 'Mar 2021', 'Apr 2021', 'May 2021', 'Jun 2021', 'Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021', 'Nov 2021', 'Dec 2021'))
+    sta_tiap_prov <- sta_tiap_prov[c(4,3)]
+    indeks <- order(sta_tiap_prov$bulan.tahun, decreasing = FALSE)
+    sta_tiap_prov <- sta_tiap_prov[indeks,]
+  }
+  if (i==1){ jambi.ch.bulanan <- sta_tiap_prov
+  } else if (i==2){ riau.ch.bulanan <- sta_tiap_prov
+  } else if (i==3){ aceh.ch.bulanan <- sta_tiap_prov
+  } else if (i==4){ kaltim.ch.bulanan <- sta_tiap_prov
+  } else if (i==5){ kalsel.ch.bulanan <- sta_tiap_prov
+  } else if (i==6){ kalteng.ch.bulanan <- sta_tiap_prov
+  } else if (i==7){ sulbar.ch.bulanan <- sta_tiap_prov
+  } else sulteng.ch.bulanan <- sta_tiap_prov
+}
+
+bulan.tahun <- sulteng.ch.bulanan$bulan.tahun
+
+CH.KALIMANTAN <- (kalteng.ch.bulanan$CH + kaltim.ch.bulanan$CH + kalsel.ch.bulanan$CH)/3
+CH.SUMATERA <- (aceh.ch.bulanan$CH + riau.ch.bulanan$CH + jambi.ch.bulanan$CH)/3
+CH.Sulawesi <- (sulbar.ch.bulanan$CH + sulteng.ch.bulanan$CH)/2
+
+kalimantan.chbl <- data.frame(bulan.tahun,CH.KALIMANTAN,
+                              produksitbsncpo$kalimantan$`Tandan Buah Segar (TBS) Panen (TON)`)
+sumatera.chbl <- data.frame(bulan.tahun,CH.SUMATERA,
+                            produksitbsncpo$sumatera$`Tandan Buah Segar (TBS) Panen (TON)`)
+sulawesi.chbl <- data.frame(bulan.tahun,CH.Sulawesi,
+                            produksitbsncpo$sulawesi$`Tandan Buah Segar (TBS) Panen (TON)`)
+
+#Ganti judul kolom
+colnames(kalimantan.chbl) <- c('bulan.tahun','CH (mm)','TBS (Ton)')
+colnames(sumatera.chbl) <- c('bulan.tahun','CH (mm)','TBS (Ton)')
+colnames(sulawesi.chbl) <- c('bulan.tahun','CH (mm)','TBS (Ton)')
+
+#
+CH.allprov <- (kalteng.ch.bulanan$CH + kaltim.ch.bulanan$CH + kalsel.ch.bulanan$CH + 
+                 aceh.ch.bulanan$CH + riau.ch.bulanan$CH + jambi.ch.bulanan$CH + 
+                 sulbar.ch.bulanan$CH + sulteng.ch.bulanan$CH)/8
+ch.total.prov <- data.frame(bulan.tahun, CH.allprov, produksitbsncpo$tbs.proses.n.cpo$`CPO Bulanan`)
+
+colnames(ch.total.prov) <- c('bulan.tahun','CH (mm)','TBS (Ton)')
+
+#Lihat data
+kalimantan.chbl
+sumatera.chbl
+sulawesi.chbl
+```
+
+##### Pengunggahan dan Pengolahan Data Curah Hujan Harian, CPO , dan Fluktuasi Saham Astra Agro Lestari Tbk. Secara Tahunan Periode 2007-2021
+
+```{r}
+#Unggah data Astra Agro Lestari Tbk. Tahunan
+library(readxl)
+produksi.thn.aali <- read_xlsx('Produksi CPO Tahunan AALI 2007 - 2021.xlsx')
+colnames(produksi.thn.aali) <- c('year','cpo','tbs','area.sum','area.kal','area.sul','productivity.tbs','productivity.cpo','harga.saham.max','harga.saham.min')
+produksi.thn.aali$year <- as.factor(produksi.thn.aali$year)
+
+#Unggah data excel CH tahunan
+folder.ch.thn <- dir(path='CH Tahunan 15 Tahun/',pattern='.xlsx',full.names=TRUE)
+lok.sta <- c("Jambi","Riau","Aceh","Kaltim","Kalsel","Kalteng","Sulbar","Sulteng")
+sta_tiap_prov <- list()
+for (i in 1:length(folder.ch.thn)) {
+  isi.sheet <- excel_sheets(folder.ch.thn[i])
+  file <- folder.ch.thn[i]
+  location <- lok.sta[i]
+  for (b in 1:length(isi.sheet)) {
+    sta_tiap_prov <- read_excel(file)
+    names(sta_tiap_prov) <- c('yr','CH')
+    sta_tiap_prov$yr <- factor(sta_tiap_prov$yr)
+  }
+  if (i==1){ jambi.ch.tahunan <- sta_tiap_prov
+  } else if (i==2){ riau.ch.tahunan <- sta_tiap_prov
+  } else if (i==3){ aceh.ch.tahunan <- sta_tiap_prov
+  } else if (i==4){ kaltim.ch.tahunan <- sta_tiap_prov
+  } else if (i==5){ kalsel.ch.tahunan <- sta_tiap_prov
+  } else if (i==6){ kalteng.ch.tahunan <- sta_tiap_prov
+  } else if (i==7){ sulbar.ch.tahunan <- sta_tiap_prov
+  } else sulteng.ch.tahunan <- sta_tiap_prov
+}
+#Hitung curah hujan dari seluruh wilayah dengan metode aritmatika
+CH.8prov.aali <- (kalteng.ch.tahunan$CH + kaltim.ch.tahunan$CH + kalsel.ch.tahunan$CH + aceh.ch.tahunan$CH + riau.ch.tahunan$CH +jambi.ch.tahunan$CH+sulbar.ch.tahunan$CH + sulteng.ch.tahunan$CH)/8
+#Hitung area lahan total
+area.total <- produksi.thn.aali$area.sum+produksi.thn.aali$area.kal+produksi.thn.aali$area.sul
+#Buat data frame masing-masing berisi saham, TBS, dan CPO
+saham.th <- produksi.thn.aali[c(1,9,10)]
+tbs.th <- data.frame(produksi.thn.aali[c(1,3,7)],area.total)
+cpo.th <- produksi.thn.aali[c(1,2,8)]
+#Gabung data sebelumnya dengan data curah huja
+saham.th <- data.frame(saham.th, CH.8prov.aali)
+tbs.th <- data.frame(tbs.th, CH.8prov.aali)
+cpo.th <- data.frame(cpo.th, CH.8prov.aali)
+#Lihat Data
+saham.th
+tbs.th
+cpo.th
+```
+
+### **Metode Analisis Data**
+
+Analisis kolerasi merupakan metode analisis data kuantitatif yang bertujuan untuk mengetahui ada atau tidaknya hubungan antar variabel sehingga dapat memudahkan dalam menentukan serta memprediksikan nilai variabel lain. Analisis korelasi dapat didefinisikan sebagai metode statistika yang digunakan untuk mengukur keeratan  hubungan antara dua  variabel (Kurniawan 2016). Pada analisis korelasi analisa mengukur keeratan hubungan antara dua variabel saja tanpa memperhatikan variabel yang dipengaruhi atau variabel yang mempengaruhi dan berapa besar pengaruh suatu variabel terhadap variabel yang lain. Dari analisis korelasi yang dilakukan didapatkan suatu nilai yang disebut sebagai koefisien korelasi. Koefisien korelasi bisa bernilai positif atau negatif dan nilai koefisien korelasi berkisar antara -1 sampai dengan +1 (Astuti 2017). Korelasi negatif ditunjukkan dengan koefisien korelasi yang bernilai negatif begitu juga sebaliknya korelasi positif ditunjukkan dengan koefisien korelasi yang bernilai positif.
+
+Analisis korelasi ini akan digunakan untuk mengukur korelasi antara curah hujan dengan CPO dan fluktuasi saham dalam skala harian/bulanan periode 2020-2021 dan skala tahunan periode 2007-2021.
+
+## Pembahasan
+
+Kelapa sawit (*Elaeis guineensis*) merupakan salah satu komoditas penting di Indonesia dan memiliki prospek pengembangan yang cukup cerah. Indonesia merupakan produsen minyak sawit terbesar di dunia pada urutan kedua setelah Malaysia yang menguasai sekitar 85% pangsa pasar dunia (Fauzi *et al.* 2002). Kelapa sawit tersebar di 26 provinsi di Indonesia. Provinsi Riau memiliki areal perkebunan kelapa sawit terluas dengan 2,89 juta ha pada 2021 atau 19,16% dari total luas areal perkebunan kelapa sawit di negeri ini. Perkembangan harga ekspor yang terus meningkat dan semakin membaik di pasar domestik maupun mancanegara menunjukkan bahwa tanaman kelapa sawit cukup potensial untuk dikembangkan. Bagi Indonesia, tanaman kelapa sawit memiliki arti penting bagi pembangunan nasional. Hal ini menjadikan sektor-sektor industri kelapa sawit yang ada di Indonesia terus berkembang dan berupaya meningkatkan jumlah produktivitas produksi sawit mereka.
+
+Terdapat beberapa faktor yang mempengaruhi produktivitas tanaman kelapa sawit,  yaitu iklim, bentuk wilayah, kondisi tanah, bahan tanam, dan teknik budidaya (PPKS 2007). Risza (2009) menyebutkan bahwa umur tanaman, jumlah populasi tanaman per hektar, sistem penyerbukan, sistem koordinasi panen pengangkut, pengolah, dan sebagainya juga berpengaruh terhadap produktivitas kelapa sawit. Pengaruh tersebut menjadi indikator yang diperhatikan dalam keberhasilan produktivitas tanaman kelapa sawit.
+
+Kondisi iklim sangat memegang peranan penting dalam produktivitas tanaman kelapa sawit karena mempengaruhi potensi produksi. Hujan berpengaruh besar terhadap  produksi kelapa sawit. Pertumbuhan kelapa sawit memerlukan curah hujan \>1250 mm/tahun dengan penyebaran hujan sepanjang tahun merata (Siregar *et al.* 2006). Tinggi rendahnya curah hujan dapat dilakukan sebagai evaluasi produksi untuk tahun-tahun ke depan. Menurut Sunarko (2007), penyebaran produksi setiap bulan dalam setahun sangat dipengaruhi oleh curah hujan pada tahun-tahun sebelumnya. Ketersediaan air bagi tanaman kelapa sawit di lahan terbuka diperoleh dari curah hujan. 
+
+Pemahaman terhadap pengaruh unsur cuaca dan umur tanaman terhadap pertumbuhan dan produksi tandan kelapa sawit (TBS) sangat diperlukan sebagai dasar untuk memprediksi dan mengevaluasi produktivitas TBS kelapa sawit. Distribusi curah hujan yang rendah berdampak pada perkembangan bunga pada tanaman kelapa sawit dan meningkatnya keguguran, tandan gagal atau busuk, produktivitas rendah dan perbungaan panjang sekitar 8-9 bulan, sedangkan kekurangan air pada kelapa sawit dapat menyebabkan kekurangan unsur hara pada tanaman kelapa sawit. Curah hujan berlebih juga dapat merusak TBS, menurunkan kualitas jalan, dan menghambat aktivitas panen.
+
+#### **CPO dan TBS Sawit PT Astra Agro Lestari Tbk.**
+
+PT Astra Agro Lestari Tbk. menjadi salah satu sektor industri sawit yang ada di indonesia. Sebagai sektor industri sawit memiliki nilai CPO dan TBS nya. *Crude Palm Oil* (CPO) dan inti sawit merupakan hasil produksi dari olahan Tandan Buah Segar (TBS). *Crude palm oil* atau CPO adalah minyak kelapa mentah. Sedangkan Tandan Buah Segar (TBS) adalah produk awal perkebunan kelapa sawit yang dapat diolah agar memiliki nilai tambah. Tanaman dengan produk utamanya CPO memiliki nilai ekonomis yang tinggi dan menjadi salah satu penyumbang devisa negara terbesar di Indonesia. 
+
+##### **Curah Hujan Bulanan dengan TBS Sawit PT Astra Agro Lestari Tbk. Periode 2020 - 2021**
+
+```{r}
+library(ggplot2)
+library(hrbrthemes)
+#KALIMANTAN
+ggplot(kalimantan.chbl)+
+  geom_bar(aes(x=bulan.tahun, y=`CH (mm)`), stat = 'identity', fill='khaki', colour = 'khaki')+
+  geom_point(aes(x=bulan.tahun, y=`TBS (Ton)`), stat = 'identity', color='red', size=4)+
+  theme_modern_rc()+
+  labs(title= "Curah Hujan dan TBS Panen Bulanan\ndi Kalimantan Periode 2020-2021",
+       subtitle = "Astra Agro Lestari Tbk.",
+       x="Bulan Tahun",y="Curah Hujan (mm)")+
+    scale_x_discrete(breaks = levels(kalimantan.chbl$bulan.tahun)[c(T, rep(F, 3))])+
+  scale_y_continuous(sec.axis=sec_axis(~.,name="TBS Panen (TON)"))
+
+#SULAWESI
+ggplot(sulawesi.chbl)+
+  geom_bar(aes(x=bulan.tahun, y=`CH (mm)`), stat = 'identity', fill='khaki', colour = 'khaki')+
+  geom_point(aes(x=bulan.tahun, y=`TBS (Ton)`), stat = 'identity', color='red', size=4)+theme_modern_rc()+
+  labs(title= "Curah Hujan dan TBS Panen Bulanan\ndi Sulawesi Periode 2020-2021",
+       subtitle = 'Astra Agro Lestari Tbk.',
+       x="Bulan Tahun",y="Curah Hujan (mm)")+
+    scale_x_discrete(breaks = levels(sulawesi.chbl$bulan.tahun)[c(T, rep(F, 3))])+
+  scale_y_continuous(sec.axis=sec_axis(~.,name="TBS Panen (TON)"))
+
+#SUMATERA
+ggplot(sumatera.chbl)+
+  geom_bar(aes(x=bulan.tahun, y=`CH (mm)`), stat = 'identity', fill='khaki', colour = 'khaki')+
+  geom_point(aes(x=bulan.tahun, y=`TBS (Ton)`), stat = 'identity', color='red', size=4)+
+  theme_modern_rc()+
+  labs(title= "Curah Hujan dan TBS Panen Bulanan\ndi Sumatera Periode 2020-2021",
+       subtitle = 'Astra Agro Lestari Tbk.',
+       x="Bulan Tahun",y="Curah Hujan (mm)")+
+  scale_x_discrete(breaks = levels(sumatera.chbl$bulan.tahun)[c(T, rep(F, 3))])+
+  scale_y_continuous(sec.axis=sec_axis(~.,name="TBS Panen (TON)"))
+
+```
+
+Pengamatan curah hujan di PT Astra Agro Lestari menggunakan tiga lokasi wilayah pengamatan yang berbeda yaitu daerah Kalimantan, Sulawesi, dan Sumatera. Pengamatan ini dibagi menjadi tiga grafik berdasarkan periode bulan dalam rentang waktu antara Januari 2020 - Desember 2021. Berdasarkan grafik tersebut, diketahui untuk wilayah Kalimantan pada periode Januari 2020 - April 2020 memiliki banyak hari hujan. Sedangkan hari hujan sedikit terjadi pada periode Mei 2020 - Agustus 2020. Pada periode Januari 2021 - Maret 2021 dan Agustus, serta November 2021 memiliki banyak hari hujan, sedangkan hari hujan sedikit terjadi pada periode April 2021- juli 2021. Untuk wilayah sulawesi pada periode Maret 2020 - Juli 2020 memiliki banyak hari hujan. Sedangkan, hari hujan sedikit terjadi pada periode Agustus dan Desember 2020. Pada tahun 2021, tepatnya bulan Januari, Agustus, dan November memiliki banyak hari hujan, sedangkan sedikit hari hujan terjadi pada April dan Juli 2021, serta untuk wilayah sumatera pada periode April, Mei, dan November 2020 memiliki banyak hari hujan, sedangkan hari hujan sedikit terjadi pada bulan Februari dan Agustus 2020. Pada Maret dan November 2021 memiliki banyak hari hujan dan pada Februari dan Juni 2021 memiliki curah hujan yang sedikit.
+
+Berikut grafik curah hujan dan TBS sawit Astra Agro Lestari Tbk. secara keseluruhan dalam periode 2020-2021.
+
+```{r}
+ggplot(ch.total.prov)+
+  geom_bar(aes(x=bulan.tahun, y=`CH (mm)`), 
+           stat = 'identity', fill='khaki', colour = 'khaki')+
+  geom_point(aes(x=bulan.tahun, y=`TBS (Ton)`),
+             stat = 'identity', color='red', size=4)+
+  theme_modern_rc()+
+  labs(title= "Curah Hujan dan Hasil TBS Panen Bulanan \nPeriode 2020-2021 di Perkebunan",
+       subtitle = "Sawit Astra Agro Lestari Tbk.",
+       x="Bulan Tahun",y="Curah Hujan (mm)")+
+    scale_x_discrete(breaks = levels(ch.total.prov$bulan.tahun)[c(T, rep(F, 3))])+
+  scale_y_continuous(sec.axis=sec_axis(~.,name="TBS Panen (TON)"))
+```
+
+##### **Korelasi Curah Hujan Bulanan dengan CPO PT Astra Agro Lestari Tbk. Periode 2020-2021**
+
+```{r}
+plot(ch.total.prov$`CH (mm)`, ch.total.prov$`TBS (Ton`,
+     main='Korelasi Curah Hujan dan CPO Bulanan\nPeriode 2020-2021 di Astra Agro Lestari Tbk.',
+     xlab='Curah Hujan (mm)',ylab='CPO Sawit (Ton)')
+abline(lm(`TBS (Ton)` ~ `CH (mm)`, data = ch.total.prov))
+```
+
+Berdasarkan grafik scatter plot yang disajikan, terdapat adanya garis korelasi antara curah hujan dengan CPO bulanan pada PT Astra Agro Lestari Tbk periode 2020 - 2021 yang memiliki nilai korelasi sebesar 0.2960274. Hal ini menunjukkan bahwa hubungan antara curah hujan dengan CPO adalah bernilai positif, tetapi kekuatannya cukup lemah.
+
+##### **Korelasi Curah Hujan Tahunan dengan CPO PT Astra Agro Lestari Tbk. Periode 2007-2021**
+
+```{r}
+cuha.cpo <- data.frame(cpo.th$year,cpo.th$cpo,cpo.th$CH.8prov.aali)
+colnames(cuha.cpo) <- c('year','CPO (Ton)','Curah Hujan (mm)')
+
+plot(cuha.cpo$`Curah Hujan (mm)`,cuha.cpo$`CPO (Ton)`, 
+     main='Korelasi Curah Hujan dan CPO\nPeriode 2007-2021 Astra Agro Lestari Tbk.',
+     xlab='Curah Hujan (mm)',ylab='CPO (Ton)')
+abline(lm(`CPO (Ton)` ~ `Curah Hujan (mm)`, data = cuha.cpo))
+```
+
+Berdasarkan grafik scatterplot yang disajikan, terdapat adanya garis korelasi antara curah hujan dengan CPO PT Astra Agro Lestari Tbk pada periode tahunan 2007 - 2021. dengan nilai korelasi sebesar -0.2250083. Hal ini menunjukkan bahwa hubungan antara curah hujan dengan CPO adalah bernilai negatif tetapi keeratan nya cukup lemah.
+
+Curah hujan tidak menunjukkan pengaruh yang kuat dan berpengaruh langsung terhadap produksi CPO sawit. Faktor curah hujan yang tidak signifikan mempengaruhi produksi kelapa sawit dapat terjadi karena pengelolaan dan tingkat kesadaran perusahaan yang telah memperhatikan dan melakukan adaptasi untuk mencegah kelebihan atau kekurangan jumlah curah hujan serta mengupayakan perbaikan varietas toleran (Junaedi 2021). Kekurangan air dalam produksi sawit juga menyebabkan penurunan CPO yang mengakibatkan  jumlah tandan sawit berkurang. Hal ini menunjukkan bahwa ada faktor lain yang berpengaruh terhadap produksi sawit. Menurut Sanoko (2007), potensi produksi tanaman sawit ditentukan oleh jenis tanaman kelapa sawit, produktivitas dan rendemen minyak kelapa sawit, faktor pemeliharaan, jumlah curah hujan setahun, gangguan hama dan penyakit, kegiatan panen, dan komoditas angkut. Seperti yang kita ketahui, produksi pertumbuhan suatu tanaman tidak hanya dari faktor internal tanaman itu sendiri, perusahaan produksi juga memberikan pengaruh yang besar. Pengaruh tersebut meliputi, jumlah lahan perkebunan kelapa sawit yang dimiliki, jumlah tenaga kerja, kualitas pupuk yang diberikan perusahaan, dan penggunaan pestisida.
+
+#### **Saham AALI PT Astra Agro Lestari TBk.**
+
+PT Astra Agro Lestari TBk.telah menjadi perusahaan publik dengan mencatat saham di Bursa Efek Indonesia (BEI). Perseroan ini merupakan anak perusahaan dari PT Astra International Tbk. yang menjadi grup usaha terkemuka dan terbesar di Indonesia. Hingga saat ini, tahun 2021, Astra memiliki 79,7% saham Perseroan dengan 20,3% saham dimiliki oleh Publik. Harga saham dalam PT ini sangat berfluktuasi, meningkat dan menurun, seiring berjalanya waktu. Harga saham perusahaan perkebunan kelapa sawit di bursa saham tidak dapat dipisahkan dari jatuhnya harga CPO dunia dan nilai tukar (Utary 2021).
+
+##### **Korelasi Curah Hujan Harian dengan Fluktuasi Saham AALI PT Astra Agro Lestari Tbk. Periode 2020-2021**
+
+```{r}
+library(reshape2)
+datamelt.flch <- melt(ch.fluks.data, id.vars = c('Tanggal', 'CH.Harian'))
+datamelt.flch <- datamelt.flch[c(1,3,4)]
+datach <- ch.fluks.data[1:2]
+datach <- melt(datach, id.vars = 'Tanggal')
+datagab_flch <- cbind(datamelt.flch, datach)
+datagab_flch <- datagab_flch[-4]
+names(datagab_flch) <- c('Tanggal', 'Saham', 'Nilai Saham','CH Harian','Nilai CH')
+datagab_flch$`Nilai Saham` <- datagab_flch$`Nilai Saham`/100
+
+ggplot(datagab_flch)+
+  geom_bar(aes(x=datagab_flch$Tanggal, y=datagab_flch$`Nilai CH`),
+            stat = 'identity', colour ='khaki')+
+  geom_line(aes(x=datagab_flch$Tanggal, y=datagab_flch$`Nilai Saham`), 
+            stat = 'identity', color = 'red')+
+  theme_modern_rc()+
+  labs(title= "Curah Hujan dan Fluktuasi Saham\nAstra Agro Lestari Tbk.",
+       x="Tanggal",y="Curah Hujan (mm)")+
+  scale_y_continuous(sec.axis=sec_axis(~.,name="Nilai Saham (Ratus Rupiah)"))
+
+```
+
+Berdasarkan grafik yang disajikan, terdapat korelasi antara curah hujan dengan fluktuasi saham AALI PT Astra Agro Lestari Tbk. pada periode 2020 - 2021 dengan nilai korelasi sebesar 0.0163097. Hal ini menunjukkan bahwa hubungan antara curah hujan dengan saham AALI ialah bernilai positif, tetapi keeratannya sangat lemah.
+
+```{r}
+datagab_flch$`Nilai Saham` <- datagab_flch$`Nilai Saham`*100
+plot(datagab_flch$`Nilai CH`, datagab_flch$`Nilai Saham`)
+abline(lm(`Nilai Saham` ~ `Nilai CH`, data = datagab_flch), col='red')
+```
+
+Berdasarkan grafik *scatter plot* yang disajikan, terdapat adanya garis korelasi antara curah hujan dengan fluktuasi saham AALI PT Astra Agro Lestari Tbk. yang hampir menyerupai garis horizontal dengan nilai korelasi sebesar 0.0163097. Hal ini menunjukkan bahwa hubungan antara curah hujan dengan saham AALI ialah bernilai positif tetapi keeratan nya sangat lemah.
+
+##### **Korelasi Curah Hujan Tahunan dengan Fluktuasi Saham AALI PT Astra Agro Lestari Tbk. Periode 2007-2021**
+
+```{r}
+ch.th <- data.frame(saham.th$year,saham.th$CH.8prov.aali)
+ch.thn <- melt(ch.th, id.vars = 'saham.th.year')
+saham.thn <- saham.th[c(1,2,3)]
+saham.thn <- melt(saham.thn,id.vars = 'year')
+sgch <- cbind(saham.thn,ch.thn[c(2,3)])
+colnames(sgch) <- c('year','ket saham (ribu rupiah)','nilai saham','CH','Nilai CH')
+sgch$CH <- 'CH (mm)'
+sgch$`nilai saham` <- sgch$`nilai saham`/1000
+
+ggplot()+  geom_bar(sgch,mapping = aes(x=year, y=`Nilai CH`),stat = 'identity', colour='khaki', fill='khaki') + 
+  geom_point(sgch,mapping=aes(x=year, y =`nilai saham`,col=`ket saham (ribu rupiah)`))+
+  theme_modern_rc()+
+  labs(title= "Curah Hujan dan Fluktuasi Saham\nAstra Agro Lestari Tbk.",
+       x="Tahun",y="Curah Hujan (mm)")+    
+  scale_x_discrete(breaks = levels(sgch$year)[c(T, rep(F, 3))])+
+  scale_y_continuous(sec.axis=sec_axis(~.,name="Harga Saham (ribu Rupiah)"))
+
+par(mfrow=c(1,2))
+plot(saham.th$CH.8prov.aali, saham.th$harga.saham.min, 
+     main='Korelasi Curah Hujan\ndan Harga Saham Terendah',
+     xlab='Curah Hujan (mm)',ylab='Harga Saham Terendah')
+abline(lm(harga.saham.min ~ CH.8prov.aali, data = saham.th))
+
+plot(saham.th$CH.8prov.aali, saham.th$harga.saham.max, 
+     main='Korelasi Curah Hujan\ndan Harga Saham Tertinggi',
+     xlab='Curah Hujan (mm)',ylab='Harga Saham Tertinggi')
+abline(lm(harga.saham.max ~ CH.8prov.aali, data = saham.th))
+```
+
+Berdasarkan grafik *scatter plot* yang disajikan, terdapat adanya garis korelasi antara curah hujan dengan pergerakan nilai saham AALI tertinggi dan terendah pada PT Astra Agro Lestari Tbk. pada periode 2007 - 2021 secara berturut-turut memiliki nilai korelasi sebesar -0.14467 dan -0.08364. Kedua nilai tersebut menunjukkan bahwa hubungan antara curah hujan dengan nilai saham AALI tertinggi maupun terendahnya bernilai negatif dan kekuatan yang sangat lemah.
+
+Curah hujan tidak memberikan pengaruh signifikan terhadap fluktuasi sawit. Fluktuasi harga sawit yang berubah disebabkan oleh beberapa faktor lainya. Faktor tersebut meliputi biaya investasi saham sawit yang sangat besar dan sifat komoditas kelapa sawit yang memerlukan tempat yang besar dan mudah rusak juga yang menyebabkan tingginya infrastruktur yang memadai (Ridha 2018). Hal ini menyebabkan para investor berpikir terlebih dahulu sebelum mereka memulai investasi. Bagi investor dalam menentukan penanaman modal khususnya dalam perkebunan sawit mempertimbangkan produktivitas dan harga komoditi di masa yang akan datang. Investor juga akan mempertimbangkan adanya "*compenting crop*", yaitu tanaman perkebunan yang dapat ditanam. Selain itu, PT Astra Agro Lestari Tbk. yang menyebabkan harga saham berfluktuasi. *Market anomaly* dan laba perusahaan juga menjadi variabel yang sangat berpengaruh terhadap harga saham (Berniz 2015). Dengan demikian, keputusan investor untuk melakukan investasi pembukaan perkebunan kelapa sawit juga dapat dipengaruhi oleh produktivitas harga dan prospek tanaman sawit.
+
+## Simpulan
+
+Dari hasil analisis yang dilakukan, dapat ditarik kesimpulan bahwa korelasi antara curah hujan terhadap produktivitas CPO dan fluktuasi nilai sahamnya pada PT Astra Agro Lestari Tbk. secara bulanan dan tahunan memiliki nilai hubungan positif dan negatif yang keeratan nya begitu lemah. Hal ini didukung dengan adanya metode pengolahan data yang digunakan yaitu poligon thiessen dan aritmatika untuk menghitung curah hujan wilayah. Dengan menggunakan pengolahan data yang dituangkan ke dalam bentuk grafik *scatter plot* dan dibuat *trendline*.
+
+## Daftar Pustaka
+
+Astra Agro Lestari. Dikutip dari <https://www.astra-agro.co.id/> 
+
+Astuti CC. 2017. Analisis korelasi untuk mengetahui keeratan hubungan antara keaktifan mahasiswa dengan hasil belajar akhir. *Journal of Information and Computer Technology Education*. 1(1):1-7.
+
+Berniz YM. Analisis pengaruh cuaca terhadap harga saham pada bursa efek Indonesia. *Jurnal Performance.* 22(2):75-79.
+
+Dwirani F. 2019. Menentukan stasiun hujan dan curah hujan dengan metode polygon thiessen daerah Kabupaten Lebak. *Jurnal Lingkungan dan Sumberdaya Alam*. 2(2):139-146.
+
+Fauzi YE, Widyastuti I, Sastyawibawa H. 2002.  Kelapa sawit: Budidaya,    pemanfaatan Hasil dan Limbah, Analisis Usaha dan Pemasaran. Jakarta (ID): Penebar Swadaya.
+
+Junaedi, Yusuf M, Darmawan, Baba B. 2021. Pengaruh curah hujan terhadap produksi kelapa sawit pada berbagai umur tanaman. *J. Agroplantae.* 10(2):114-123.
+
+Lashari, Kusumawardani R, Prakasa F. 2017. Analisa distribusi curah hujan di area Merapi menggunakan metode aritmatika dan poligon. *Jurnal Teknik Sipil dan Perencanaan.* 19(1):39-48.
+
+Kurniawan R. 2016. Analisis Regresi. Jakarta (ID): Prenada Media.
+
+Pusat Penelitian Kelapa Sawit. 2007. Budidaya Kelapa Sawit. Medan (ID): Pusat Penelitian Kelapa Sawit.
+
+Ridha A. 2018. Faktor-faktor yang mempengaruhi produksi kelapa sawit di Kabupaten Aceh Timur. *Jurnal Samudra Ekonomika.* 2(1):13-19.
+
+Risza S. 2009. Kelapa  Sawit: Upaya Peningkatan Produktivitas. Yogyakarta (ID): Kanisius.
+
+Siregar HH, Darian TC, Hidayat W, Darmosarkoro, Harahap IY. 2006. Seri Buku Saku Hujan sebagai Faktor Penting untuk Perkebunan Kelapa Sawit. Medan (ID): Pusat Penelitian Kelapa Sawit.
+
+Sunarko. 2007. Petunjuk praktis budidaya dan pengolahan kelapa sawit. Jakarta (ID): Agromedia Pustaka.
+
+Utary, Rantelangi, Rohmani. 2021. Anteseden yang mempengaruhi harga saham perusahaan sawit di bursa efek Indonesia. *Prima Ekonomika*. 12(1):61-73.
+
+## Lampiran
+
++-----+------------------------+-------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| NO  | NAMA                   | NIM         | PROPORSI | PEMBAGIAN                                                                                                                                                                                |
++=====+========================+=============+==========+==========================================================================================================================================================================================+
+| 1\. | Adi Suwarno            | G2401211019 | 29%      | -   Unduh data melalui OGIMET dan olah data curah hujan 2 tahunan di Aceh dan Kalimantan Timur, dengan metode poligon thiessen.                                                          |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Unduh data melalui OGIMET dan olah data curah hujan 15 tahun seluruh provinsi, dengan metode poligon thiessen.                                                                       |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Unduh data saham AALI periode harian 2020 - 2021.                                                                                                                                    |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Kumpulin data TBS Sawit dan CPO Astra Agro Lestari Tbk. bulanan tahun 2021 melalui laporan bulanan Astra Agro Lestari Tbk.                                                           |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Kumpulin data TBS Sawit, CPO, informasi luas lahan, dan saham tertinggi terendah Astra Agro Lestari Tbk. tahunan periode 2007 - 2011 melalui laporan tahunan Astra Agro Lestari Tbk. |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Metodologi bagian 2.                                                                                                                                                                 |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Plot Grafik.                                                                                                                                                                         |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   R Markdown.                                                                                                                                                                          |
++-----+------------------------+-------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2\. | Restu Gendhis Selifani | G2401211042 | 29%      | -   Unduh data melalui OGIMET dan olah data curah hujan 2 tahunan di Jambi, Kalimantan Tengah, dan Kalimantan Selatan, dengan metode poligon thiessen.                                   |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Kumpulin data TBS Sawit dan CPO Astra Agro Lestari Tbk. bulanan tahun 2020 melalui laporan bulanan Astra Agro Lestari Tbk.                                                           |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Kumpulin data TBS Sawit, CPO, informasi luas lahan, dan saham tertinggi terendah Astra Agro Lestari Tbk. tahunan periode 2012 - 2021 melalui laporan tahunan Astra Agro Lestari Tbk. |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Metodologi bagian 1.                                                                                                                                                                 |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Tujuan.                                                                                                                                                                              |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Sebagian pembahasan.                                                                                                                                                                 |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Powerpoint.                                                                                                                                                                          |
++-----+------------------------+-------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 3\. | Abd. Malik A. Madinu   | G2401211050 | 29%      | -   Unduh data melalui OGIMET dan olah data curah hujan 2 tahunan di Riau, Sulawesi Barat, dan Sulawesi Tengah, dengan metode poligon thiessen.                                          |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Abstrak.                                                                                                                                                                             |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Membuat diagram alir.                                                                                                                                                                |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Sebagian pendahuluan.                                                                                                                                                                |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Sebagian pembahasan.                                                                                                                                                                 |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Simpulan.                                                                                                                                                                            |
+|     |                        |             |          |                                                                                                                                                                                          |
+|     |                        |             |          | -   Powerpoint.                                                                                                                                                                          |
++-----+------------------------+-------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 4\. | Lintang Sekartadji     | G2401211059 | 13%      | -   Sebagian pendahuluan.                                                                                                                                                                |
+|     |                        |             |          | -   Tujuan.                                                                                                                                                                              |
+|     |                        |             |          | -   Powerpoint.                                                                                                                                                                          |
++-----+------------------------+-------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
